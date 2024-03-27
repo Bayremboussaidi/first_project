@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Messages</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+        }
+
+        /* Form styling */
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Passer Commande Au Fournisseur:</h1>
+
+<form th:action="@{/messages}" th:object="${message}" method="post">
+    <input type="text" th:field="*{content}" placeholder="Votre message">
+    <input type="submit" value="Envoyer">
+</form>
+</body>
+</html>
